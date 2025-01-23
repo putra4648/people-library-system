@@ -1,0 +1,11 @@
+name: 'people-library-system'
+services:
+  db:
+    container_name: library-db
+    image: postgres
+    environment:
+      - "POSTGRES_USER=admin"
+      - "POSTGRES_DB=library-db"
+      - "POSTGRES_PASSWORD=admin123"
+    ports:
+      - "5000:5432"

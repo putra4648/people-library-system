@@ -20,6 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(Customizer.withDefaults());
         http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated());
         http.formLogin(Customizer.withDefaults());
         http.logout(Customizer.withDefaults());
@@ -30,7 +31,8 @@ public class WebConfig {
     @Bean
     FilterRegistrationBean prodRegistrationFilter() {
         FilterRegistrationBean filter = new FilterRegistrationBean();
-        filter.setFilter(new UsernamePasswordAuthenticationFilter() {});
+        filter.setFilter(new UsernamePasswordAuthenticationFilter() {
+        });
         return filter;
     }
 
@@ -49,7 +51,7 @@ public class WebConfig {
 
     @Bean
     UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails admin = User.builder().username("admin").password(passwordEncoder.encode("admin123")).build();
+        UserDetails admin = User.builder().username("admin").password(passwordEncoder.encode("admin123")).roles("ADMIN").build();
         return new InMemoryUserDetailsManager(admin);
     }
 }

@@ -29,8 +29,8 @@ public class WebConfig {
 
     @Profile("!dev")
     @Bean
-    FilterRegistrationBean prodRegistrationFilter() {
-        FilterRegistrationBean filter = new FilterRegistrationBean();
+    FilterRegistrationBean<UsernamePasswordAuthenticationFilter> prodRegistrationFilter() {
+        FilterRegistrationBean<UsernamePasswordAuthenticationFilter> filter = new FilterRegistrationBean<>();
         filter.setFilter(new UsernamePasswordAuthenticationFilter() {
         });
         return filter;
@@ -38,8 +38,8 @@ public class WebConfig {
 
     @Profile("dev")
     @Bean
-    FilterRegistrationBean defaultRegistrationFilter() {
-        FilterRegistrationBean filter = new FilterRegistrationBean();
+    FilterRegistrationBean<AnonymousAuthenticationFilter> defaultRegistrationFilter() {
+        FilterRegistrationBean<AnonymousAuthenticationFilter> filter = new FilterRegistrationBean<>();
         filter.setFilter(new AnonymousAuthenticationFilter("dev"));
         return filter;
     }

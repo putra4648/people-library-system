@@ -2,7 +2,7 @@ name: 'people-library-system'
 services:
   db:
     container_name: 'people-library-db'
-    image: postgres
+    image: postgres:16
     environment:
       - "POSTGRES_USER=admin"
       - "POSTGRES_DB=library-db"

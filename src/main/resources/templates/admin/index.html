@@ -9,8 +9,5 @@
 </head>
 <body>
 <div th:text="${message}"></div>
-<div th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
-    <p>You Can See Me</p>
-</div>
 </body>
 </html>

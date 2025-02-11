@@ -1,17 +1,17 @@
 ####
-# This Dockerfile.native-micro.native.legacy-jar is used in order to build a container that runs the Quarkus application in JVM mode
+# This Dockerfile.jvm is used in order to build a container that runs the Quarkus application in JVM mode
 #
 # Before building the container image run:
 #
-# ./mvnw package
+# c
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native-micro.native.legacy-jar.jvm -t quarkus/quartz-quickstart-jvm .
+# docker build -f src/main/docker/Dockerfile.jvm -t people-library-system .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/quartz-quickstart-jvm
+# docker run -i --rm -p 8080:8080 people-library-system
 #
 # If you want to include the debug port into your docker image
 # you will have to expose the debug port (default 5005 being the default) like this :  EXPOSE 8080 5005.
@@ -20,7 +20,7 @@
 #
 # Then run the container using :
 #
-# docker run -i --rm -p 8080:8080 quarkus/quartz-quickstart-jvm
+# docker run -i --rm -p 8080:8080 people-library-system
 #
 # This image uses the `run-java.sh` script to run the application.
 # This scripts computes the command line to execute your Java application, and

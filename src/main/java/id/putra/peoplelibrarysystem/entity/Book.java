@@ -1,13 +1,17 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Entity
 @Table(name = "books")
-@Builder
+@SuperBuilder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book extends BaseEntity {
     @Id
     @Column(name = "isbn", nullable = false)
@@ -28,7 +32,4 @@ public class Book extends BaseEntity {
     @OneToMany(mappedBy = "book", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Publisher> publishers;
 
-    public Book() {
-        super();
-    }
 }

@@ -1,14 +1,18 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "address")
-@Builder
-public class Address implements Serializable {
+@SuperBuilder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -25,7 +29,4 @@ public class Address implements Serializable {
 
     @OneToOne(mappedBy = "address")
     private User user;
-
-    public Address() {
-    }
 }

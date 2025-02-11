@@ -2,13 +2,21 @@ package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
 @MappedSuperclass
-@Builder
-public class BaseEntity {
+@SuperBuilder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public abstract class BaseEntity {
     @Column(name = "created_by")
     private String createdBy;
 
@@ -20,7 +28,4 @@ public class BaseEntity {
 
     @Column(name = "modified_at")
     private Date modifiedAt;
-
-    public BaseEntity() {
-    }
 }

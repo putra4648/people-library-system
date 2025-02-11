@@ -1,12 +1,18 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "user_role")
-@Builder
-public class Role  {
+@SuperBuilder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Role {
     @Id
     @Column(name = "role_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -17,9 +23,4 @@ public class Role  {
 
     @OneToOne(mappedBy = "role")
     private User user;
-
-    public Role() {
-    }
-
-
 }

@@ -5,7 +5,6 @@
     "dockerfilePath": "src/main/docker/Dockerfile.jvm"
   },
   "deploy": {
-    "preDeployCommand": ["./mvnw clean package"],
     "startCommand": "docker run -i --rm -p 8080:8080 people-library-system",
     "restartPolicyMaxRetries": 3,
     "restartPolicyType": "ON_FAILURE"

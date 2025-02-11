@@ -1,12 +1,14 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Builder;
+
+import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
-@Data
-public class User extends BaseEntity {
+@Builder
+public class User extends BaseEntity  {
     @Id
     @Column(name = "user_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -19,4 +21,8 @@ public class User extends BaseEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
     private Role role;
+
+    public User() {
+        super();
+    }
 }

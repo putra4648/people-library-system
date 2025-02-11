@@ -1,11 +1,11 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Builder;
 
 @Entity
 @Table(name = "categories")
-@Data
+@Builder
 public class Category extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -18,4 +18,8 @@ public class Category extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "isbn")
     private Book book;
+
+    public Category() {
+        super();
+    }
 }

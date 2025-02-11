@@ -1,4 +1,5 @@
-name: 'people-library-system'
+version: '3'
+
 services:
   db:
     container_name: 'people-library-db'

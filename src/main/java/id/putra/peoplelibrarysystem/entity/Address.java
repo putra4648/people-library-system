@@ -1,12 +1,14 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Builder;
+
+import java.io.Serializable;
 
 @Entity
-@Table(name = "user_addresses")
-@Data
-public class Address extends BaseEntity {
+@Table(name = "address")
+@Builder
+public class Address implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -23,4 +25,7 @@ public class Address extends BaseEntity {
 
     @OneToOne(mappedBy = "address")
     private User user;
+
+    public Address() {
+    }
 }

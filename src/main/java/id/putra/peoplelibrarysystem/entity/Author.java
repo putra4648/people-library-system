@@ -1,13 +1,14 @@
 package id.putra.peoplelibrarysystem.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "authors")
-@Data
+@Builder
 public class Author extends BaseEntity {
     @Id
     @Column(name = "author_id", nullable = false)
@@ -23,4 +24,8 @@ public class Author extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "isbn")
     private Book book;
+
+    public Author() {
+        super();
+    }
 }

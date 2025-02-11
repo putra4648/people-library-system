@@ -3,7 +3,7 @@
 #
 # Before building the container image run:
 #
-# c
+# ./mvnw package
 #
 # Then, build the image with:
 #
@@ -77,11 +77,6 @@
 #   accessed directly. (example: "foo.example.com,bar.example.com")
 #
 ###
-FROM maven AS build
-COPY src ./src
-COPY pom.xml ./pom.xml
-RUN mvn clean package
-
 FROM registry.access.redhat.com/ubi8/openjdk-17:1.20
 
 ENV LANGUAGE='en_US:en'

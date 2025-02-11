@@ -3,11 +3,6 @@
   "build": {
     "builder": "DOCKERFILE",
     "dockerfilePath": "src/main/docker/Dockerfile.jvm"
-  },
-  "deploy": {
-    "startCommand": "docker run -i --rm -p 8080:8080 people-library-system",
-    "restartPolicyMaxRetries": 3,
-    "restartPolicyType": "ON_FAILURE"
   }
 }
 

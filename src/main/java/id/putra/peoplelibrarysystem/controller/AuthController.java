@@ -1,6 +1,6 @@
 package id.putra.peoplelibrarysystem.controller;
 
-public class UserController {
+public class AuthController {
 
 
 }

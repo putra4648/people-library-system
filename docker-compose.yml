@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     container_name: 'people-library-db'
-    image: postgres:16
+    image: postgres:17
     environment:
       - "POSTGRES_USER=admin"
       - "POSTGRES_DB=library-db"

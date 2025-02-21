@@ -1,5 +1,6 @@
-package id.putra.peoplelibrarysystem.controller;
+package id.putra.peoplelibrarysystem.resource;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -39,7 +40,7 @@ public class AuthController {
     @PermitAll
     public Response login() {
         String token = Jwt.issuer("https://example.com/issuer").upn("admin@admin.com")
-                .groups(new HashSet<>(Arrays.asList("Admin", "User"))).sign();
+                .groups(new HashSet<>(Arrays.asList("Admin", "User"))).expiresIn(Duration.ofDays(1)).sign();
         NewCookie cookie = new NewCookie.Builder("jwt").path("/").value(token).build();
         return Response.ok("Login success").cookie(cookie).build();
     }

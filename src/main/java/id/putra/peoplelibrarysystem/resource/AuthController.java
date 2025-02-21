@@ -40,7 +40,7 @@ public class AuthController {
     @PermitAll
     public Response login() {
         String token = Jwt.issuer("https://example.com/issuer").upn("admin@admin.com")
-                .groups(new HashSet<>(Arrays.asList("Admin", "User"))).expiresIn(Duration.ofDays(1)).sign();
+                .groups(new HashSet<>(Arrays.asList("Admin"))).expiresIn(Duration.ofDays(1)).sign();
         NewCookie cookie = new NewCookie.Builder("jwt").path("/").value(token).build();
         return Response.ok("Login success").cookie(cookie).build();
     }

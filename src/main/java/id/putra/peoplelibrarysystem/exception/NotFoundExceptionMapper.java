@@ -1,13 +1,23 @@
 package id.putra.peoplelibrarysystem.exception;
 
-import org.jboss.resteasy.reactive.server.ServerExceptionMapper;
+import java.util.HashMap;
 
-import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
 
-public class NotFoundExceptionMapper {
-    @ServerExceptionMapper
-    public Response handleExceptions(WebApplicationException exception) {
-        return exception.getResponse();
+@Provider
+public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundException> {
+
+    @Override
+    public Response toResponse(NotFoundException exception) {
+        var body = new HashMap<>();
+
+        body.put("error", true);
+        body.put("message", exception.getMessage());
+
+        return Response.ok(body).build();
     }
+
 }

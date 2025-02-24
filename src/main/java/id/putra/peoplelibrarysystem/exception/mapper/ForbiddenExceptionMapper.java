@@ -1,4 +1,4 @@
-package id.putra.peoplelibrarysystem.exception;
+package id.putra.peoplelibrarysystem.exception.mapper;
 
 import io.quarkus.security.ForbiddenException;
 import jakarta.ws.rs.core.Context;
@@ -8,8 +8,6 @@ import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.HashMap;
 
 @Provider
 @Slf4j

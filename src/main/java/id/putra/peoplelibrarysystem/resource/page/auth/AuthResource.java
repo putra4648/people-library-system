@@ -39,6 +39,14 @@ public class AuthResource {
         return Response.ok(AuthTemplates.login()).build();
     }
 
+    @GET
+    @Path("register")
+    @Produces(MediaType.TEXT_HTML)
+    public Response register() {
+        return Response.ok(AuthTemplates.register()).build();
+    }
+
+
     private boolean isTokenValid(String token) {
         try {
             jwtParser.parseOnly(token);
@@ -51,6 +59,8 @@ public class AuthResource {
     @CheckedTemplate
     public static class AuthTemplates {
         public static native TemplateInstance login();
+
+        public static native TemplateInstance register();
     }
 
 }

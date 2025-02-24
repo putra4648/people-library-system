@@ -8,4 +8,8 @@ public interface AuthRoute {
     @GET
     @Path("login")
     TemplateInstance login();
+
+    @GET
+    @Path("register")
+    TemplateInstance register();
 }

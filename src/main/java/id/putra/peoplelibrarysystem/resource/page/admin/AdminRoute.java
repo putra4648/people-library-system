@@ -1,6 +1,5 @@
-package id.putra.peoplelibrarysystem.resource.user;
+package id.putra.peoplelibrarysystem.resource.page.admin;
 
-import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.GET;
@@ -8,9 +7,11 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.SecurityContext;
 
-@RolesAllowed("User")
-@Path("user")
-public interface UserRoute {
+@RolesAllowed("Admin")
+@Path("admin")
+public interface AdminRoute {
     @GET
-    TemplateInstance user(@Context SecurityContext sec);
+    TemplateInstance admin(@Context SecurityContext sec);
+
 }
+

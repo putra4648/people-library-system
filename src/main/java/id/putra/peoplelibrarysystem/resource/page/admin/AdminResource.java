@@ -1,4 +1,4 @@
-package id.putra.peoplelibrarysystem.resource.admin;
+package id.putra.peoplelibrarysystem.resource.page.admin;
 
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
@@ -9,11 +9,11 @@ public class AdminResource implements AdminRoute {
     @Override
     public TemplateInstance admin(@Context SecurityContext sec) {
         AdminDatasource data = new AdminDatasource(sec.getUserPrincipal().getName());
-        return Templates.index(data);
+        return AdminTemplates.index(data);
     }
 
     @CheckedTemplate
-    public static class Templates {
+    public static class AdminTemplates {
         public static native TemplateInstance index(AdminDatasource data);
     }
 

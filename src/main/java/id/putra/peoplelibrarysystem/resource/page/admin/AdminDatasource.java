@@ -1,4 +1,4 @@
-package id.putra.peoplelibrarysystem.resource.admin;
+package id.putra.peoplelibrarysystem.resource.page.admin;
 
 public class AdminDatasource {
     public final String name;

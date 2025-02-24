@@ -1,4 +1,4 @@
-package id.putra.peoplelibrarysystem.resource.user;
+package id.putra.peoplelibrarysystem.resource.page.user;
 
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
@@ -9,11 +9,11 @@ public class UserResource implements UserRoute {
     @Override
     public TemplateInstance user(SecurityContext sec) {
         UserDatasource datasource = new UserDatasource();
-        return Templates.index(datasource);
+        return UserTemplates.index(datasource);
     }
 
     @CheckedTemplate
-    public static class Templates {
+    public static class UserTemplates {
         public static native TemplateInstance index(UserDatasource data);
     }
 }

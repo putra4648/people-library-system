@@ -1,18 +1,20 @@
 package id.putra.peoplelibrarysystem.exception;
 
-import java.util.HashMap;
-
 import io.quarkus.security.ForbiddenException;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
 
 @Provider
+@Slf4j
 public class ForbiddenExceptionMapper implements ExceptionMapper<ForbiddenException> {
 
     @Override
     public Response toResponse(ForbiddenException exception) {
-        exception.printStackTrace();
+        log.error(exception.getMessage(), exception);
 
         var body = new HashMap<>();
 

@@ -1,4 +1,4 @@
-package id.putra.peoplelibrarysystem.resource;
+package id.putra.peoplelibrarysystem.resource.auth;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -19,8 +19,8 @@ import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 
-@Path("/auth")
-public class AuthController {
+@Path("auth")
+public class AuthResource {
 
     @Inject
     JsonWebToken jwt;

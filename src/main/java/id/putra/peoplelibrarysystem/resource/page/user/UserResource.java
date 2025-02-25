@@ -8,12 +8,12 @@ public class UserResource implements UserRoute {
 
     @Override
     public TemplateInstance user(SecurityContext sec) {
-        UserDatasource datasource = new UserDatasource();
-        return UserTemplates.index(datasource);
+        UserDatasource userDatasource = new UserDatasource(sec.getUserPrincipal().getName());
+        return UserTemplates.index(userDatasource);
     }
 
     @CheckedTemplate
     public static class UserTemplates {
-        public static native TemplateInstance index(UserDatasource data);
+        public static native TemplateInstance index(UserDatasource userDatasource);
     }
 }

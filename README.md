@@ -3,10 +3,10 @@
 ![Static Badge](https://img.shields.io/badge/quarkus-3-lime?style=for-the-badge&logo=quarkus)
 ![Static Badge](https://img.shields.io/badge/railway-lightblue?style=for-the-badge&logo=railway)
 
-
 ## Deskripsi
 
-Woi there 
+Woi there
 
 Ini adalah aplikasi gabut untuk mengatur peminjaman buku seperti layaknya perpustakaan versi online 😎
 
+Menggunakan framework Java yaitu Quarkus
